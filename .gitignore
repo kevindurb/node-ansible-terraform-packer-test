@@ -5,3 +5,4 @@ infra/manifest.json
 *.tfstate.backup
 *.tfvars
 .terraform/
+infra/vars.json
