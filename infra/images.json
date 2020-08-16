@@ -1,0 +1,28 @@
+{
+  "variables": {
+    "digitalocean_api_token": ""
+  },
+  "builders" : [
+    {
+      "type": "digitalocean",
+      "api_token": "{{user `digitalocean_api_token`}}",
+      "image": "ubuntu-20-04-x64",
+      "region": "nyc3",
+      "size": "512mb",
+      "ssh_username": "root"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./provision_image.yaml"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "manifest",
+      "output": "manifest.json",
+      "strip_path": true
+    }
+  ]
+}

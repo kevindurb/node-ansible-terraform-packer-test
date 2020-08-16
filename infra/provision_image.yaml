@@ -1,0 +1,20 @@
+---
+- hosts: default
+  become: true
+
+  tasks:
+    - name: apt update
+      apt:
+        update_cache: yes
+
+    - name: install node
+      apt:
+        name: 'nodejs'
+        state: present
+        update_cache: yes
+
+    - name: install npm
+      apt:
+        name: 'npm'
+        state: present
+        update_cache: yes
