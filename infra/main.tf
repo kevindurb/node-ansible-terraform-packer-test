@@ -13,8 +13,12 @@ provider "digitalocean" {
 }
 
 resource "digitalocean_droplet" "web" {
-  image  = "68520945"
-  name   = "api"
+  image = "68530033"
+  name = "api"
   region = "nyc3"
-  size   = "s-1vcpu-1gb"
+  size = "s-1vcpu-1gb"
+}
+
+output "web_ip" {
+  value = digitalocean_droplet.web.ipv4_address
 }

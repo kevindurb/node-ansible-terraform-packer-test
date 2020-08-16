@@ -18,3 +18,20 @@
         name: 'npm'
         state: present
         update_cache: yes
+
+    - name: create user
+      user:
+        name: kevindurb
+        shell: "/bin/bash"
+
+    - name: make sure kevindurb owns everything in home
+      file:
+        path: /home/kevindurb
+        owner: kevindurb
+        recurse: yes
+
+    - name: Set authorized keys taken from github
+      authorized_key:
+        user: kevindurb
+        state: present
+        key: https://github.com/kevindurb.keys

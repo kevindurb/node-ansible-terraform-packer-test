@@ -6,3 +6,4 @@ infra/manifest.json
 *.tfvars
 .terraform/
 infra/vars.json
+.digital_ocean_api_token
