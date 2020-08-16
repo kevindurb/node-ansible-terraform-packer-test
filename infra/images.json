@@ -9,7 +9,8 @@
       "image": "ubuntu-20-04-x64",
       "region": "nyc3",
       "size": "512mb",
-      "ssh_username": "root"
+      "ssh_username": "root",
+      "snapshot_name": "api-gold"
     }
   ],
   "provisioners": [
